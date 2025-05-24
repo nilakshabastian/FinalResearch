@@ -1,0 +1,52 @@
+package com.zone24x7.steps;
+
+import com.zone24x7.pages.AddUserPage;
+import com.zone24x7.pages.DashbroadPage;
+import com.zone24x7.pages.LoggingPage;
+import com.zone24x7.utils.DriverFactory;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.When;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+
+public class AddUserSteps {
+
+    WebDriver driver;
+    DashbroadPage dashbroadPage;
+    AddUserPage addUserPage;
+    LoggingPage loggingPage;
+
+
+
+    @When("I navigate to Add User page")
+    public void i_navigate_to_add_user_page() throws InterruptedException {
+
+        dashbroadPage = new DashbroadPage(driver);
+        Thread.sleep(5000);
+        dashbroadPage = new DashbroadPage(driver);
+        dashbroadPage.seachUsername("nilakshab2@wms.app");
+        dashbroadPage.ClickAddUserBtn();
+
+
+        // Write code here that turns the phrase above into concrete actions
+       // throw new io.cucumber.java.PendingException();
+    }
+
+    @When("the admin adds a new user with valid details")
+    public void the_admin_adds_a_new_user_with_valid_details() {
+
+        addUserPage = new AddUserPage(driver);
+        addUserPage.enterNewUserName("nilakshab4");
+        addUserPage.AddFirstName("Nilaksha");
+        addUserPage.AddLastName("Bastian");
+        addUserPage.AddPassword("1qaz2wsx@A");
+        addUserPage.AddRePassword("1qaz2wsx@A");
+        addUserPage.SelectUserRole();
+        addUserPage.SelectUserRole();
+        addUserPage.Clickcreatebtn();
+
+
+        // Write code here that turns the phrase above into concrete actions
+        //throw new io.cucumber.java.PendingException();
+    }
+}
