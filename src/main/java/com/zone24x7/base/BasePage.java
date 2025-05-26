@@ -1,16 +1,12 @@
 package com.zone24x7.base;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.openqa.selenium.support.ui.Select;
 
-import javax.xml.xpath.XPath;
 import java.time.Duration;
 import java.util.NoSuchElementException;
 
@@ -58,6 +54,19 @@ public class BasePage {
     public boolean isDisplayed(By by){
         WebElement webElement = waitForElementToBeVisible(by);
         return webElement.isDisplayed();
+    }
+
+
+    public String getText(By by){
+        WebElement webElement = waitForElementToBeVisible(by);
+        return webElement.getText();
+    }
+
+    public BasePage selectByVisibleText(By by, String text){
+        WebElement webElement = waitForElementToBeVisible(by);
+        Select select = new Select(webElement);
+        select.selectByVisibleText(text);
+        return this;
     }
 
 }

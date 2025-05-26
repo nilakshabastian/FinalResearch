@@ -21,10 +21,9 @@ public class AddUserSteps {
     @When("I navigate to Add User page")
     public void i_navigate_to_add_user_page() throws InterruptedException {
 
+        driver= DriverFactory.getDriver();
         dashbroadPage = new DashbroadPage(driver);
         Thread.sleep(5000);
-        dashbroadPage = new DashbroadPage(driver);
-        dashbroadPage.seachUsername("nilakshab2@wms.app");
         dashbroadPage.ClickAddUserBtn();
 
 
@@ -33,15 +32,22 @@ public class AddUserSteps {
     }
 
     @When("the admin adds a new user with valid details")
-    public void the_admin_adds_a_new_user_with_valid_details() {
+    public void the_admin_adds_a_new_user_with_valid_details() throws InterruptedException {
 
         addUserPage = new AddUserPage(driver);
-        addUserPage.enterNewUserName("nilakshab4");
+        addUserPage.enterNewUserName("nilakshab9");
         addUserPage.AddFirstName("Nilaksha");
         addUserPage.AddLastName("Bastian");
         addUserPage.AddPassword("1qaz2wsx@A");
         addUserPage.AddRePassword("1qaz2wsx@A");
-        addUserPage.SelectUserRole();
+        Thread.sleep(5000);
+        addUserPage.ClickStatus();
+        addUserPage.SelectActiveStatus();
+        Thread.sleep(5000);
+        addUserPage.ClickSecondaryWH();
+        addUserPage.SelectValueSecondaryWH();
+        Thread.sleep(5000);
+        addUserPage.ReClickSecondaryWH();
         addUserPage.SelectUserRole();
         addUserPage.Clickcreatebtn();
 

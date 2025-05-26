@@ -12,9 +12,13 @@ public class AddUserPage extends BasePage {
     private By txtLastName =By.xpath("//input[@id=\"lastName\"]");
     private By txtPassword =By.xpath("//input[@id=\"password\"]");
     private By txtREPassword =By.xpath("//input[@id=\"passwordCom\"]");
-    private By dropdownStatus =By.xpath("//li[@tabindex='0']");
-    private By checkboxUserRole =By.xpath("//input[@value='24cae04f-0ba3-4ae8-8d9d-83fd75771f5e']");
+    private By dropdownStatus =By.xpath("//div[@id='status'] ");
+    private By dropValueStatus =By.xpath("//*[@id=\"mui-18\"]/li[1]");
+    private By checkboxUserRole =By.xpath("/html/body/div[4]/div[3]/div[2]/div[2]/div/div[1]/label[10]/span[1]/span");
     private By btncreate =By.xpath("/html/body/div[4]/div[3]/div[3]/div/button[2]");
+    private By drpdwnSecoondaryWH = By.xpath("//div[@id='optionalWarehouses']");
+    private By drpdwnValueSecondaryWH =By.xpath("//*[@id=\"mui-20\"]/li");
+    private By closeSecondaryWH = By.xpath("/html/body/div[4]/div[3]/div[2]/div[2]/div/div[1]");
 
     public AddUserPage(WebDriver driver){
         super(driver);
@@ -59,6 +63,37 @@ public class AddUserPage extends BasePage {
 
         click(checkboxUserRole);
         return this;
+    }
+
+    public AddUserPage ClickStatus(){
+
+        click(dropdownStatus);
+        return this;
+
+    }
+
+    public AddUserPage SelectActiveStatus(){
+
+        click(dropValueStatus);
+        return this;}
+
+    public AddUserPage ClickSecondaryWH(){
+
+        click(drpdwnSecoondaryWH);
+        return this;
+
+    }
+
+    public AddUserPage SelectValueSecondaryWH(){
+
+        click(drpdwnValueSecondaryWH);
+        return this;}
+
+    public AddUserPage ReClickSecondaryWH(){
+
+        click(closeSecondaryWH);
+        return this;
+
     }
 
     public DashbroadPage Clickcreatebtn(){
