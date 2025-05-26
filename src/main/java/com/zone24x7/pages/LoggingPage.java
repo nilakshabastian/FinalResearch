@@ -11,7 +11,8 @@ public class LoggingPage extends BasePage {
     private By txtUserName =By.xpath("//input[@id='username']");
     private By txtPassword =By.xpath("//input[@id='password']");
     private By btnLogin =By.xpath("//button[@id='kc-login']");
-
+    private By lblSuspendMesseage = By.xpath("//div[contains(text(),'Account is disabled, contact your administrator.')]");
+    private By lblDeleteMesseage = By.xpath("//div[contains(text(),'Invalid username or password.')]");
 
 
     public LoggingPage(WebDriver driver){
@@ -30,5 +31,15 @@ public class LoggingPage extends BasePage {
     public DashbroadPage ClickLogin() {
         click(btnLogin);
         return new DashbroadPage(driver);
+    }
+
+    public String verifySuspendLogin(){
+
+        return getText(lblSuspendMesseage);
+    }
+
+    public String verifyDeleteLogin(){
+
+        return getText(lblDeleteMesseage);
     }
 }

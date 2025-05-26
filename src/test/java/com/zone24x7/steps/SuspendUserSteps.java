@@ -33,8 +33,7 @@ public class SuspendUserSteps {
         Thread.sleep(5000);
         dashbroadPage.suspendUser();
         dashbroadPage.confirmSuspend();
-        String actualStatus = dashbroadPage.vryStatus().toString();
-        Assert.assertEquals(actualStatus, "Inactive");
+        Assert.assertEquals(dashbroadPage.vryStatus(), "Inactive");
 
 
         // Write code here that turns the phrase above into concrete actions

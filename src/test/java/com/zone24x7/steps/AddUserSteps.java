@@ -55,4 +55,10 @@ public class AddUserSteps {
         // Write code here that turns the phrase above into concrete actions
         //throw new io.cucumber.java.PendingException();
     }
+
+    @Given("I navigate to The WHS Login page via SuperAdmin")
+    public void i_navigate_to_the_whs_login_page_via_super_admin() {
+        // Write code here that turns the phrase above into concrete actions
+        //throw new io.cucumber.java.PendingException();
+    }
 }

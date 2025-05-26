@@ -6,6 +6,7 @@ import com.zone24x7.utils.DriverFactory;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 
 public class EditUserSteps {
 
@@ -34,6 +35,7 @@ public class EditUserSteps {
         editUserPage.EditFirstName("1");
         editUserPage.EditLastName("1");
         editUserPage.ClickUpdatebtn();
+        Assert.assertEquals(dashbroadPage.vryEditUserStatus(),"Nilaksha11 Bastian11");
 
         // Write code here that turns the phrase above into concrete actions
         //throw new io.cucumber.java.PendingException();

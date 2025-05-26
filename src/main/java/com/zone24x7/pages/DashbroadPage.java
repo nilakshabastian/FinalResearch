@@ -12,13 +12,13 @@ public class DashbroadPage extends BasePage {
     private By txtSearch =By.xpath("//input[@id='search']");
     private By btnSuspend =By.xpath("//*[@id=\"root\"]/div/div/main/div/main/div[2]/div/div[2]/div[1]/table/tbody/tr/td[4]/button[2]");;
     private By btnYesSuspend =By.xpath("/html/body/div[4]/div[3]/div/div[2]/div[2]/button");
-    private By lblStatus =By.xpath("//*[@id=\"root\"]/div/div/main/div/main/div[2]/div/div[2]/div[1]/table/tbody/tr/td[3]/div/span");
+    private By lblStatus =By.xpath("//span[contains(text(),'Inactive')]");
     private By btnView =By.xpath("//*[@id=\"root\"]/div/div/main/div/main/div[2]/div/div[2]/div[1]/table/tbody/tr/td[4]/button[4]");
     private By lblViewUserName = By.xpath("//h6[contains(text(),'nilakshab@wms.app')]");
     private By btnDelete= By.xpath("//*[@id=\"root\"]/div/div/main/div/main/div[2]/div/div[2]/div[1]/table/tbody/tr/td[4]/button[1]");
     private By btnYesDelete= By.xpath("/html/body/div[4]/div[3]/div/div[2]/div[2]/button");
     private By btnEdit= By.xpath("//*[@id=\"root\"]/div/div/main/div/main/div[2]/div/div[2]/div[1]/table/tbody/tr/td[4]/button[3]");
-
+    private By lblEditusername =By.xpath("//td[contains(text(),'Nilaksha1 Bastian1')]");
 
 
 
@@ -56,11 +56,9 @@ public class DashbroadPage extends BasePage {
 
     }
 
-    public DashbroadPage vryStatus(){
+    public String vryStatus(){
 
-        getText(lblStatus);
-        return this;
-
+        return getText(lblStatus);
     }
 
    public DashbroadPage clickViewbtn(){
@@ -69,10 +67,10 @@ public class DashbroadPage extends BasePage {
         return this;
    }
 
-    public DashbroadPage vryViewUserName(){
+    public String vryViewUserName(){
 
-        getText(lblViewUserName);
-        return this;
+        return getText(lblViewUserName);
+
 
     }
 
@@ -97,6 +95,11 @@ public class DashbroadPage extends BasePage {
     public EditUserPage ClickEditUserBtn() {
         click(btnEdit);
         return new EditUserPage(driver);
+    }
+
+    public String vryEditUserStatus(){
+
+        return getText(lblEditusername);
     }
 
 

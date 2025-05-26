@@ -6,11 +6,11 @@ import io.cucumber.testng.CucumberOptions;
 import org.testng.annotations.AfterSuite;
 
 @CucumberOptions(
-        features = "src/test/java/com/zone24x7/features",
+        features = "src/test/resources/features",
         glue = {"com.zone24x7.steps"},
         plugin = {"pretty", "html:target/cucumber-reports.html"},
         monochrome = true,
-        tags = "@Regression1"
+        tags = "@Regression8"
 )
 
 public class TestRunner extends AbstractTestNGCucumberTests {

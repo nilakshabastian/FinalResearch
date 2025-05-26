@@ -50,8 +50,9 @@ public class ViewUserSteps {
         dashbroadPage = new DashbroadPage(driver);
         Thread.sleep(5000);
         dashbroadPage.clickViewbtn();
-        String actualUName = dashbroadPage.vryViewUserName().toString();
-        Assert.assertEquals(actualUName, "nilakshab@wms.app");
+        Assert.assertEquals(dashbroadPage.vryViewUserName(), "nilakshab@wms.app");
+        //String actualUName = dashbroadPage.vryViewUserName().toString();
+       // Assert.assertEquals(actualUName, "nilakshab@wms.app");
 
         // Write code here that turns the phrase above into concrete actions
         //throw new io.cucumber.java.PendingException();
