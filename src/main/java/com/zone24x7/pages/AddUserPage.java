@@ -13,12 +13,15 @@ public class AddUserPage extends BasePage {
     private By txtPassword =By.xpath("//input[@id=\"password\"]");
     private By txtREPassword =By.xpath("//input[@id=\"passwordCom\"]");
     private By dropdownStatus =By.xpath("//div[@id='status'] ");
-    private By dropValueStatus =By.xpath("//*[@id=\"mui-18\"]/li[1]");
-    private By checkboxUserRole =By.xpath("/html/body/div[4]/div[3]/div[2]/div[2]/div/div[1]/label[10]/span[1]/span");
+    // private By dropValueStatus =By.xpath("//li[@class='MuiButtonBase-root MuiMenuItem-root MuiMenuItem-gutters Mui-selected MuiMenuItem-root MuiMenuItem-gutters Mui-selected css-17xrhff']");
+    private By dropValueStatus =By.xpath("//li[@data-value=\"ACTIVE\"]");
+    private By checkboxUserRole =By.xpath("//span[contains(text(),'Warehouse Admin')]");
     private By btncreate =By.xpath("/html/body/div[4]/div[3]/div[3]/div/button[2]");
     private By drpdwnSecoondaryWH = By.xpath("//div[@id='optionalWarehouses']");
     private By drpdwnValueSecondaryWH =By.xpath("//*[@id=\"mui-20\"]/li");
     private By closeSecondaryWH = By.xpath("/html/body/div[4]/div[3]/div[2]/div[2]/div/div[1]");
+    private By drpdwnDefWH = By.id("defaultWarehouse");
+
 
     public AddUserPage(WebDriver driver){
         super(driver);
@@ -72,8 +75,9 @@ public class AddUserPage extends BasePage {
 
     }
 
-    public AddUserPage SelectActiveStatus(){
+    public AddUserPage SelectActiveStatus() throws InterruptedException {
 
+        Thread.sleep(5000);
         click(dropValueStatus);
         return this;}
 
@@ -100,6 +104,12 @@ public class AddUserPage extends BasePage {
 
         click(btncreate);
         return new DashbroadPage(driver);
+    }
+
+    public AddUserPage addDefaultWH(String WHName){
+
+        enterText(drpdwnDefWH,WHName);
+        return this;
     }
 
 

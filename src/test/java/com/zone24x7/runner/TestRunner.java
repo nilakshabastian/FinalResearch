@@ -10,7 +10,7 @@ import org.testng.annotations.AfterSuite;
         glue = {"com.zone24x7.steps"},
         plugin = {"pretty", "html:target/cucumber-reports.html"},
         monochrome = true,
-        tags = "@Regression8"
+        tags = "@Regression9"
 )
 
 public class TestRunner extends AbstractTestNGCucumberTests {

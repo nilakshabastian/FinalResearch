@@ -23,8 +23,9 @@ public class AddUserSteps {
 
         driver= DriverFactory.getDriver();
         dashbroadPage = new DashbroadPage(driver);
-        Thread.sleep(5000);
+
         dashbroadPage.ClickAddUserBtn();
+        Thread.sleep(5000);
 
 
         // Write code here that turns the phrase above into concrete actions
@@ -44,10 +45,10 @@ public class AddUserSteps {
         addUserPage.ClickStatus();
         addUserPage.SelectActiveStatus();
         Thread.sleep(5000);
-        addUserPage.ClickSecondaryWH();
-        addUserPage.SelectValueSecondaryWH();
-        Thread.sleep(5000);
-        addUserPage.ReClickSecondaryWH();
+        addUserPage.addDefaultWH("USA");
+        //addUserPage.ClickSecondaryWH();
+        //addUserPage.SelectValueSecondaryWH();
+        //addUserPage.ReClickSecondaryWH();
         addUserPage.SelectUserRole();
         addUserPage.Clickcreatebtn();
 

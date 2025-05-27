@@ -19,7 +19,7 @@ public class DashbroadPage extends BasePage {
     private By btnYesDelete= By.xpath("/html/body/div[4]/div[3]/div/div[2]/div[2]/button");
     private By btnEdit= By.xpath("//*[@id=\"root\"]/div/div/main/div/main/div[2]/div/div[2]/div[1]/table/tbody/tr/td[4]/button[3]");
     private By lblEditusername =By.xpath("//td[contains(text(),'Nilaksha1 Bastian1')]");
-
+    private By lblUserManagementicon =By.xpath("//li[@class='MuiListItem-root MuiListItem-gutters MuiListItem-padding css-5414pq']");
 
 
     public DashbroadPage(WebDriver driver){
@@ -100,6 +100,12 @@ public class DashbroadPage extends BasePage {
     public String vryEditUserStatus(){
 
         return getText(lblEditusername);
+    }
+
+    public DashbroadPage ClickUsermanagementIcon(){
+
+        click(lblUserManagementicon);
+        return this;
     }
 
 
