@@ -1,4 +1,4 @@
-@Regression1
+@Regression2
 Feature: Add Users in User Management
 
   Scenario: Successfully Add to Users in User Management

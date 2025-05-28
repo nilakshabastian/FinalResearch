@@ -30,7 +30,7 @@ public class SuspendUserSteps {
 
         driver= DriverFactory.getDriver();
         dashbroadPage = new DashbroadPage(driver);
-        Thread.sleep(5000);
+
         dashbroadPage.suspendUser();
         dashbroadPage.confirmSuspend();
         Assert.assertEquals(dashbroadPage.vryStatus(), "Inactive");

@@ -1,4 +1,4 @@
-@Regression9
+@Regression3
 Feature: Add New User in User Management by Super Admin
 
   Scenario: Successfully Add to New User in User Management
@@ -14,4 +14,4 @@ Feature: Add New User in User Management by Super Admin
     And Enter REPassword to AddUser page
     And Select the Status AddUser page
     And Click the Create button AddUser page
-    Then Verify the Successfully Message
+    Then Verify the User in the Grip

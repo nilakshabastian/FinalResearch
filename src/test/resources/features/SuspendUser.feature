@@ -1,4 +1,4 @@
-@Regression2
+@Regression4
 Feature: Suspend Users in User Management
 
   Scenario: Successfully Suspend Users in User Management

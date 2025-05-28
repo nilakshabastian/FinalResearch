@@ -6,7 +6,9 @@ import com.zone24x7.pages.LoggingPage;
 import com.zone24x7.utils.DriverFactory;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 
 public class AddNewUserUsingSuperAdminSteps {
 
@@ -89,18 +91,25 @@ public class AddNewUserUsingSuperAdminSteps {
     }
 
     @When("Click the Create button AddUser page")
-    public void click_the_create_button_add_user_page() {
-
+    public void click_the_create_button_add_user_page() throws InterruptedException {
+        Thread.sleep(5000);
         addUserPage.Clickcreatebtn();
 
     }
 
-    @Then("Verify the Successfully Message")
-    public void verify_the_successfully_message() {
-
-        // Write code here that turns the phrase above into concrete actions
-       // throw new io.cucumber.java.PendingException();
+    @Then("Verify the User in the Grip")
+    public void verify_the_user_in_the_grip() throws InterruptedException {
+        dashbroadPage = new DashbroadPage(driver);
+        dashbroadPage.seachUsername("aaaa@wms.app"+ Keys.ENTER);
+        dashbroadPage.clickViewbtn();
+        Assert.assertEquals(dashbroadPage.vryCreatedUserName(),"aaaa@wms.app");
+        dashbroadPage.clickCloseViewUserDetails();
+        dashbroadPage.ClickDelete();
+        dashbroadPage.confirmDelete();
+        dashbroadPage.logoutUsermanagement();
     }
+
+
 
 
 }

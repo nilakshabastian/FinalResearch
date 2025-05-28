@@ -1,5 +1,5 @@
-@Regression4
-Feature: Delete	User	in	User	Management
+@Regression6
+Feature: Delete	User in	User Management
 
   Scenario: Successfully Delete Users in User Management
     Given I navigate to The WHS Login page

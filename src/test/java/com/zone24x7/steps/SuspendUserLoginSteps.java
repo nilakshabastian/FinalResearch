@@ -34,8 +34,9 @@ public class SuspendUserLoginSteps {
         //throw new io.cucumber.java.PendingException();
     }
     @When("User clicks on Login")
-    public void user_clicks_on_login() {
+    public void user_clicks_on_login() throws InterruptedException {
 
+        Thread.sleep(3000);
         loggingPage.ClickLogin();
         // Write code here that turns the phrase above into concrete actions
         //throw new io.cucumber.java.PendingException();

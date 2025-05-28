@@ -16,11 +16,9 @@ public class AddUserPage extends BasePage {
     // private By dropValueStatus =By.xpath("//li[@class='MuiButtonBase-root MuiMenuItem-root MuiMenuItem-gutters Mui-selected MuiMenuItem-root MuiMenuItem-gutters Mui-selected css-17xrhff']");
     private By dropValueStatus =By.xpath("//li[@data-value=\"ACTIVE\"]");
     private By checkboxUserRole =By.xpath("//span[contains(text(),'Warehouse Admin')]");
-    private By btncreate =By.xpath("/html/body/div[4]/div[3]/div[3]/div/button[2]");
-    private By drpdwnSecoondaryWH = By.xpath("//div[@id='optionalWarehouses']");
-    private By drpdwnValueSecondaryWH =By.xpath("//*[@id=\"mui-20\"]/li");
-    private By closeSecondaryWH = By.xpath("/html/body/div[4]/div[3]/div[2]/div[2]/div/div[1]");
+    private By btncreate =By.xpath("//button[@class='MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary css-8v3hxn']");
     private By drpdwnDefWH = By.id("defaultWarehouse");
+
 
 
     public AddUserPage(WebDriver driver){
@@ -81,27 +79,10 @@ public class AddUserPage extends BasePage {
         click(dropValueStatus);
         return this;}
 
-    public AddUserPage ClickSecondaryWH(){
 
-        click(drpdwnSecoondaryWH);
-        return this;
 
-    }
-
-    public AddUserPage SelectValueSecondaryWH(){
-
-        click(drpdwnValueSecondaryWH);
-        return this;}
-
-    public AddUserPage ReClickSecondaryWH(){
-
-        click(closeSecondaryWH);
-        return this;
-
-    }
-
-    public DashbroadPage Clickcreatebtn(){
-
+    public DashbroadPage Clickcreatebtn() throws InterruptedException {
+        Thread.sleep(3000);
         click(btncreate);
         return new DashbroadPage(driver);
     }

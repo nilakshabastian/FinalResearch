@@ -6,10 +6,9 @@ import com.zone24x7.pages.LoggingPage;
 import com.zone24x7.utils.DriverFactory;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
-public class AddUserSteps {
+public class AddNewUsersUsingClientUser {
 
     WebDriver driver;
     DashbroadPage dashbroadPage;
@@ -25,7 +24,7 @@ public class AddUserSteps {
         dashbroadPage = new DashbroadPage(driver);
 
         dashbroadPage.ClickAddUserBtn();
-        Thread.sleep(5000);
+
 
 
         // Write code here that turns the phrase above into concrete actions

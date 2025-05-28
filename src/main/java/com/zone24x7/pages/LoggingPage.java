@@ -28,7 +28,9 @@ public class LoggingPage extends BasePage {
         return this;
     }
 
-    public DashbroadPage ClickLogin() {
+    public DashbroadPage ClickLogin() throws InterruptedException {
+
+        Thread.sleep(3000);
         click(btnLogin);
         return new DashbroadPage(driver);
     }
