@@ -10,16 +10,16 @@ import org.testng.annotations.AfterSuite;
         glue = {"com.zone24x7.steps"},
         plugin = {"pretty", "html:target/cucumber-reports.html"},
         monochrome = true,
-        tags = "@Regression4"
+        tags = "@Regression2"
 )
 
 public class TestRunner extends AbstractTestNGCucumberTests {
 
-   // @AfterSuite
-  //  public void tearDown(){
+    @AfterSuite
+   public void tearDown(){
 
-  //     DriverFactory.quitDriver();
- //   }
+      DriverFactory.quitDriver();
+   }
 
     }
 
