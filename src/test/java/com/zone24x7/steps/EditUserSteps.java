@@ -1,5 +1,6 @@
 package com.zone24x7.steps;
 
+import com.zone24x7.base.BasePage;
 import com.zone24x7.pages.DashbroadPage;
 import com.zone24x7.pages.EditUserPage;
 import com.zone24x7.utils.DriverFactory;
@@ -28,15 +29,14 @@ public class EditUserSteps {
     public void edit_the_selected_user() throws InterruptedException {
         driver= DriverFactory.getDriver();
         dashbroadPage = new DashbroadPage(driver);
-        Thread.sleep(5000);
         dashbroadPage.ClickEditUserBtn();
-        Thread.sleep(5000);
         editUserPage =new EditUserPage(driver);
-        editUserPage.EditFirstName("1");
-        editUserPage.EditLastName("1");
+        editUserPage.clearFileds(driver);
+        editUserPage.EditFirstName("Nilaksha4");
+        editUserPage.EditLastName("Bastian4");
         editUserPage.ClickUpdatebtn();
-        Assert.assertEquals(dashbroadPage.vryEditUserStatus(),"Nilaksha11 Bastian11");
-
+        Assert.assertEquals(BasePage.WorkingMemory.getMemorizedValue("insertValueData1")+" "+BasePage.WorkingMemory.getMemorizedValue("insertValueData2"), dashbroadPage.vryEditUserStatus());
+        dashbroadPage.logoutUsermanagement();
         // Write code here that turns the phrase above into concrete actions
         //throw new io.cucumber.java.PendingException();
     }

@@ -10,7 +10,7 @@ public class DashbroadPage extends BasePage {
     private By lblUserManagement =By.xpath("//button[@class = \"MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary css-1wb7qr7\"]");
     private By btnAddNewUser =By.xpath("//button[@class = \"MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary css-1wb7qr7\"]");
     private By txtSearch =By.xpath("//input[@id='search']");
-    private By btnSuspend =By.xpath("//*[@id=\"root\"]/div/div/main/div/main/div[2]/div/div[2]/div[1]/table/tbody/tr/td[4]/button[2]");;
+    private By btnSuspend =By.xpath("//button[@aria-label='Deactivate']");;
     private By btnYesSuspend =By.xpath("/html/body/div[4]/div[3]/div/div[2]/div[2]/button");
     private By lblStatus =By.xpath("//span[contains(text(),'Inactive')]");
     private By btnView =By.xpath("//button[@aria-label='View']");
@@ -18,12 +18,12 @@ public class DashbroadPage extends BasePage {
     private By lblCreateUserName =By.xpath("//h6[contains(text(),'aaaa@wms.app')]");
     private By btnDelete= By.xpath("//button[@aria-label='Delete']");
     private By btnYesDelete= By.xpath("/html/body/div[4]/div[3]/div/div[2]/div[2]/button");
-    private By btnEdit= By.xpath("//*[@id=\"root\"]/div/div/main/div/main/div[2]/div/div[2]/div[1]/table/tbody/tr/td[4]/button[3]");
-    private By lblEditusername =By.xpath("//td[contains(text(),'Nilaksha1 Bastian1')]");
+    private By btnEdit= By.xpath("//button[@aria-label='Edit']");
+    private By lblEditusername =By.xpath("(//td[@class='MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft MuiTableCell-sizeSmall css-13dlznl'])[1]");
     private By lblUserManagementicon =By.xpath("//li[@class='MuiListItem-root MuiListItem-gutters MuiListItem-padding css-5414pq']");
     private By btnCloseViewUserDetails =By.xpath("//button[@class='MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-x7lr3e']");
     private By btnLogout =By.xpath("//div[@class='MuiBox-root css-3jv294']");
-
+    private By txtUserCreationTosMeg = By.xpath("//div[@class='MuiAlert-message css-1xsto0d']");
 
     public DashbroadPage(WebDriver driver){
         super(driver);
@@ -49,7 +49,7 @@ public class DashbroadPage extends BasePage {
     }
 
     public DashbroadPage suspendUser() throws InterruptedException {
-        Thread.sleep(5000);
+        Thread.sleep(3000);
         click(btnSuspend);
         return this;
     }
@@ -88,13 +88,13 @@ public class DashbroadPage extends BasePage {
 
     public AddUserPage ClickAddUserBtn() throws InterruptedException {
 
-        Thread.sleep(5000);
+        Thread.sleep(2000);
         click(btnAddNewUser);
         return new AddUserPage(driver);
     }
 
-    public DashbroadPage ClickDelete(){
-
+    public DashbroadPage ClickDelete() throws InterruptedException {
+        Thread.sleep(2000);
         click(btnDelete);
         return this;
     }
@@ -106,13 +106,14 @@ public class DashbroadPage extends BasePage {
 
     }
 
-    public EditUserPage ClickEditUserBtn() {
+    public EditUserPage ClickEditUserBtn() throws InterruptedException {
+        Thread.sleep(5000);
         click(btnEdit);
         return new EditUserPage(driver);
     }
 
-    public String vryEditUserStatus(){
-
+    public String vryEditUserStatus() throws InterruptedException {
+        Thread.sleep(5000);
         return getText(lblEditusername);
     }
 
@@ -133,6 +134,12 @@ public class DashbroadPage extends BasePage {
 
         click(btnLogout);
         return this;
+    }
+
+    public String vryGetTostMsg() throws InterruptedException {
+
+        Thread.sleep(1000);
+        return getText(txtUserCreationTosMeg);
     }
 
 

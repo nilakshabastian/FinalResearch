@@ -92,8 +92,9 @@ public class AddNewUserUsingSuperAdminSteps {
 
     @When("Click the Create button AddUser page")
     public void click_the_create_button_add_user_page() throws InterruptedException {
-        Thread.sleep(5000);
+
         addUserPage.Clickcreatebtn();
+        Assert.assertEquals(dashbroadPage.vryGetTostMsg(),"User aaaa Added successfully!");
 
     }
 
