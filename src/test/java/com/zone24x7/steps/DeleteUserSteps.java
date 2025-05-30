@@ -18,7 +18,6 @@ public class DeleteUserSteps {
 
         driver= DriverFactory.getDriver();
         dashbroadPage = new DashbroadPage(driver);
-        Thread.sleep(5000);
         dashbroadPage.seachUsername("nilakshab4@wms.app"+ Keys.ENTER);
         // Write code here that turns the phrase above into concrete actions
         //throw new io.cucumber.java.PendingException();

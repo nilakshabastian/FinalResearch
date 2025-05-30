@@ -11,13 +11,13 @@ public class DashbroadPage extends BasePage {
     private By btnAddNewUser =By.xpath("//button[@class = \"MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary css-1wb7qr7\"]");
     private By txtSearch =By.xpath("//input[@id='search']");
     private By btnSuspend =By.xpath("//button[@aria-label='Deactivate']");;
-    private By btnYesSuspend =By.xpath("/html/body/div[4]/div[3]/div/div[2]/div[2]/button");
+    private By btnYesSuspend =By.xpath("//button[normalize-space()='Yes']");
     private By lblStatus =By.xpath("//span[contains(text(),'Inactive')]");
     private By btnView =By.xpath("//button[@aria-label='View']");
     private By lblViewUserName = By.xpath("//h6[contains(text(),'nilakshab@wms.app')]");
     private By lblCreateUserName =By.xpath("//h6[contains(text(),'aaaa@wms.app')]");
     private By btnDelete= By.xpath("//button[@aria-label='Delete']");
-    private By btnYesDelete= By.xpath("/html/body/div[4]/div[3]/div/div[2]/div[2]/button");
+    private By btnYesDelete= By.xpath("//button[normalize-space()='Yes']");
     private By btnEdit= By.xpath("//button[@aria-label='Edit']");
     private By lblEditusername =By.xpath("(//td[@class='MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft MuiTableCell-sizeSmall css-13dlznl'])[1]");
     private By lblUserManagementicon =By.xpath("//li[@class='MuiListItem-root MuiListItem-gutters MuiListItem-padding css-5414pq']");
@@ -54,8 +54,8 @@ public class DashbroadPage extends BasePage {
         return this;
     }
 
-    public DashbroadPage confirmSuspend(){
-
+    public DashbroadPage confirmSuspend() throws InterruptedException {
+        Thread.sleep(3000);
         click(btnYesSuspend);
         return this;
 
@@ -99,15 +99,15 @@ public class DashbroadPage extends BasePage {
         return this;
     }
 
-    public DashbroadPage confirmDelete(){
-
+    public DashbroadPage confirmDelete() throws InterruptedException {
+        Thread.sleep(2000);
         click(btnYesDelete);
         return this;
 
     }
 
     public EditUserPage ClickEditUserBtn() throws InterruptedException {
-        Thread.sleep(5000);
+        Thread.sleep(3000);
         click(btnEdit);
         return new EditUserPage(driver);
     }
